@@ -231,11 +231,11 @@ static UIView *prevToast = NULL;
         // convert string literals @"top", @"bottom", @"center", or any point wrapped in an NSValue object into a CGPoint
         UIView *view = [[UIApplication sharedApplication] keyWindow];
         if([point caseInsensitiveCompare:@"top"] == NSOrderedSame) {
-            return CGPointMake(wiew.bounds.size.width/2, (toast.frame.size.height / 2) + addPixelsY + CSToastVerticalPadding + CSToastTopBottomOffset);
+            return CGPointMake(view.bounds.size.width/2, (toast.frame.size.height / 2) + addPixelsY + CSToastVerticalPadding + CSToastTopBottomOffset);
         } else if([point caseInsensitiveCompare:@"bottom"] == NSOrderedSame) {
-            return CGPointMake(wiew.bounds.size.width/2, (wiew.bounds.size.height - (toast.frame.size.height / 2)) - CSToastVerticalPadding - CSToastTopBottomOffset + addPixelsY);
+            return CGPointMake(view.bounds.size.width/2, (view.bounds.size.height - (toast.frame.size.height / 2)) - CSToastVerticalPadding - CSToastTopBottomOffset + addPixelsY);
         } else if([point caseInsensitiveCompare:@"center"] == NSOrderedSame) {
-            return CGPointMake(wiew.bounds.size.width / 2, (wiew.bounds.size.height / 2) + addPixelsY);
+            return CGPointMake(view.bounds.size.width / 2, (view.bounds.size.height / 2) + addPixelsY);
         }
     } else if ([point isKindOfClass:[NSValue class]]) {
         return [point CGPointValue];
