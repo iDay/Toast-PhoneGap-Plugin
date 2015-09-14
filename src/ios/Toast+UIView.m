@@ -116,7 +116,8 @@ static UIView *prevToast = NULL;
   
     if ([[[UIDevice currentDevice] systemVersion] compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending) {
         // on iOS8 when InAppBrowser is active, the Toast is below it,
-        [self.superview.superview addSubview:toast];
+        //[self.superview.superview addSubview:toast];
+        [[[UIApplication sharedApplication] keyWindow] addSubview:toast];
     } else {
         // ..on iOS7 however with this fix on landscape the Toast isn't rotated automatically
         [self.superview addSubview:toast];
